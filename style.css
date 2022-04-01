@@ -1,58 +1,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;800;900&display=swap');
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    appearance: none;
-    outline: none;
-    border: 0;
     text-decoration: none;
     list-style: none;
 }
@@ -88,14 +40,10 @@ html{
 }
 
 body{
-    width: 100vw;
-    height: 100vh;
     font-size: 0.88rem;
     background: var(--color-background);
     font-family: 'Poppins', sans-serif;
-    user-select: none;
-    overflow: hidden;    
-    scroll-behavior: smooth;
+    user-select: none;    
 }
 
 .container{
@@ -172,20 +120,217 @@ b{
     color: var(--color-warning);
 }
 
-aside{
-    height: 100vh;
-    width: 90vw;
+aside .top{
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    padding: 5px 5px;
+
+}
+aside .logo{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+aside .logo-img{
+    width: 2rem;
+    height: 2rem;
+}
+
+aside .close{
+    display: none;
+}
+
+aside .sidebar{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 80vh;
+    top: 2.0rem;
+    padding-left: 1rem;  
+}
+
+aside h3{
+    font-weight: 500;
+}
+
+ .sidebar a{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--color-info-dark);
+    margin: 0.8rem;
+    position: relative;
+    height: 1.7rem;
+    transition: all 0.3s ease-in;
+}
+
+.sidebar a span{
+font-size: 1.6rem;
+transition: all 0.3s ease-in;
+}
+
+.sidebar a:last-child{
+    position: absolute;
+    bottom: -3rem;
+    width: 88%;
+}
+
+.sidebar a:active{
+    background: var(--color-light);
+    color: var(--color-primary);
+    margin-left: 0;
+    border-radius: 40px;
+ 
+}
+
+.sidebar a:active:before{
+    content: '';
+    width: 4px;
+    height: 100%;
+    background: var(--color-primary);
+
+}
+.sidebar a:active span{
+    color: var(--color-primary);
+    margin-left: calc(1rem-3px);
+}
+
+.sidebar a:hover{
+    color:var(--color-primary);
+
+}
+
+.sidebar a:hover span{
+    margin-left: 1rem;
+}
+
+.sidebar .message-count{
+    background-color: #ff7782;
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+ 
+main{
+    margin-top: 1.4rem;
+}
+ 
+main .date{
+    display: inline-block;
+    background: var(--color-light);
+    border-radius: var(--border-radius-1);
+    margin-top: 1rem;
+    padding: 0.5rem 1.6rem;
+}
+
+main .date input[type="date"]{
+    background: transparent;
+    color: var(--color-dark);
+}
+
+main .insights{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+
+main .insights > div{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s;
+}
+
+main .insights > div:hover{
+    box-shadow: none;
+
+}
+
+main .insights > div span{
+    background: var(--color-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--color-white);
+    font-size: 2rem;
+}
+
+main .insights > div.expenses span{
+    background: var(--color-danger);
+}
+main .insights > div.income span{
+    background: var(--color-success);
+}
+
+main .insights > div .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .insights h3{
+    margin: 1rem 0 0.6rem;
+    font-size: 1rem;
+}
+
+main .insights .progress{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+main .insights svg{
+    width: 7rem;
+    height: 7rem;
+}
+
+main .insights svg circle{
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(5px , 5px);
+    stroke-dasharray: 110;
+    stroke-dashoffset: 92;
+}
+
+main .insights .sales svg circle{
+    stroke-dasharray: 200;
+    stroke-dashoffset: -30;
+
+}
+main .insights .expenses svg circle{
+    stroke: var(--color-danger);
+    stroke-dasharray: 80;
+    stroke-dashoffset: 20;
     
 }
 
+main .insights .income svg circle{
+    stroke: var(--color-success);
+ stroke-dasharray: 110;
+ stroke-dashoffset: 35 ;
+}
 
+main .insights .progress .number{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-
-
-
-
-
-
-
-
- 
+main .insights small{
+    margin-top: 1.3rem;
+    display: block;
+}
