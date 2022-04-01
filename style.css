@@ -175,11 +175,11 @@ transition: all 0.3s ease-in;
 
 .sidebar a:last-child{
     position: absolute;
-    bottom: -3rem;
+    bottom: -2.5rem;
     width: 88%;
 }
 
-.sidebar a:active{
+.sidebar a.active{
     background: var(--color-light);
     color: var(--color-primary);
     margin-left: 0;
@@ -187,14 +187,14 @@ transition: all 0.3s ease-in;
  
 }
 
-.sidebar a:active:before{
+.sidebar a.active:before{
     content: '';
     width: 4px;
     height: 100%;
     background: var(--color-primary);
 
 }
-.sidebar a:active span{
+.sidebar a.active span{
     color: var(--color-primary);
     margin-left: calc(1rem-3px);
 }
@@ -220,6 +220,13 @@ main{
     margin-top: 1.4rem;
 }
  
+.input{
+    font-display:inherit;
+    font-weight: 600;
+    padding: 5px;
+    margin: 0;
+}
+
 main .date{
     display: inline-block;
     background: var(--color-light);
@@ -334,3 +341,44 @@ main .insights small{
     margin-top: 1.3rem;
     display: block;
 }
+
+main .recent-orders{
+    margin-top: 2rem;
+
+}
+
+main .recent-orders h2{
+    margin-bottom: 0.8rem;
+}
+
+main .recent-orders table{
+    background: var(--color-background);
+    width: 100%;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease-in;
+}
+
+main .recent-orders table:hover{
+    box-shadow: none;
+}
+
+main table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+main table tbody tr:last-child td{
+    border: none;
+}
+
+main .recent-orders a{
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
