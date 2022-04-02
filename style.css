@@ -553,6 +553,11 @@ margin-top: 2rem;
     justify-content: center;
 }
 
+.right .sales-analytics .add-product:hover{
+    background: var(--color-primary);
+    color: var(--color-white,#fff);
+}
+
 .right .sales-analytics .add-product div{
     display: flex;
     align-items: center;
