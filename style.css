@@ -179,7 +179,9 @@ transition: all 0.3s ease-in;
 }
 
 
-.sidebar a.active{
+
+
+ .sidebar :active{
     background: var(--color-light);
     color: var(--color-primary);
     margin-left: 0;
@@ -187,14 +189,14 @@ transition: all 0.3s ease-in;
  
 }
 
-.sidebar a.active:before{
+.sidebar :active:before{
     content: '';
     width: 4px;
     height: 100%;
     background: var(--color-primary);
 
 }
-.sidebar a.active span{
+.sidebar :active span{
     color: var(--color-primary);
     margin-left: calc(1rem-3px);
 }
